@@ -23,7 +23,7 @@ app = FastAPI()
 
 JWT_SECRET = os.environ.get('JWT_SECRET')
 
-client = pymongo.MongoClient(os.environ.get('JWT_SECRET'))
+client = pymongo.MongoClient(os.environ.get('MONGO_URL'))
 db = client.diary
 
 
