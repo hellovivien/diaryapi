@@ -12,3 +12,4 @@ passlib
 bcrypt
 streamlit_lottie
 dnspython
+pyjwt
