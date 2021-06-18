@@ -11,17 +11,20 @@ from faker import Faker
 fake = Faker()
 from datetime import datetime
 import random
+import os
 
-# heroku url : https://lit-spire-48980.herokuapp.com/
+# heroku url : https://salty-sea-10515.herokuapp.com/
 # run local server : uvicorn api:app --reload
 # API security example : https://www.youtube.com/watch?v=6hTRw_HK3Ts
 
 app = FastAPI()
 # oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
 
-JWT_SECRET = 'myjwtsecret'
 
-client = pymongo.MongoClient("mongodb+srv://vivien:serpython@cluster0.hozdq.mongodb.net/diary?retryWrites=true&w=majority")
+os.environ.get
+JWT_SECRET = os.environ.get('JWT_SECRET')
+
+client = pymongo.MongoClient(os.environ.get('MONGO_URL'))
 db = client.diary
 
 
