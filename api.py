@@ -21,9 +21,12 @@ app = FastAPI()
 # oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
 
 
-JWT_SECRET = os.environ.get('JWT_SECRET')
+# JWT_SECRET = os.environ.get('JWT_SECRET')
 
-client = pymongo.MongoClient(os.environ.get('JWT_SECRET'))
+# client = pymongo.MongoClient(os.environ.get('JWT_SECRET'))
+JWT_SECRET = 'myjwtsecret'
+
+client = pymongo.MongoClient("mongodb+srv://vivien:serpython@cluster0.hozdq.mongodb.net/diary?retryWrites=true&w=majority")
 db = client.diary
 
 
